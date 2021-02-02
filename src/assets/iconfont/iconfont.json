@@ -1,0 +1,79 @@
+{
+  "id": "2338750",
+  "name": "bdshop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7549841",
+      "name": "列表",
+      "font_class": "RectangleCopy",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "690202",
+      "name": "消息",
+      "font_class": "iconfontxiaoxi",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "765138",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "1365373",
+      "name": "公告",
+      "font_class": "gonggao",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "1440210",
+      "name": "个人",
+      "font_class": "tubiaozhizuomoban",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "1488731",
+      "name": "phone",
+      "font_class": "phone",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "4251728",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "5208768",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "5270852",
+      "name": "收 藏-产品详情",
+      "font_class": "shoucang",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "13191371",
+      "name": "定位",
+      "font_class": "dingwei",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    }
+  ]
+}

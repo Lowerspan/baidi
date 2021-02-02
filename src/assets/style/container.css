@@ -1,0 +1,7 @@
+.container{
+    width: 1200px;
+    line-height: 38px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+}
