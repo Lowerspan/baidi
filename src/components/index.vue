@@ -6,14 +6,8 @@
 </template>
 
 <script>
-import Header from "../common/header";
-import Logo1 from "../common/logo1";  
-import Nav from "../common/nav";
 export default {
   components: {
-    Header,
-    Logo1,
-    Nav,
   },
   data() {
     return {};

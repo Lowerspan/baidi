@@ -74,7 +74,7 @@
         <div class="main_title_1">
           <p>热门频道</p>
         </div>
-        <div style="width:100%;display:flex">
+        <div style="width: 100%; display: flex">
           <div class="hotList">
             <div class="hot_main">
               <img src="../assets/images/index/图层2@2x.png" alt="" />
@@ -86,12 +86,14 @@
               <img src="../assets/images/index/图层2@2x.png" alt="" />
             </div>
             <p>安防用品</p>
-          </div><div class="hotList">
+          </div>
+          <div class="hotList">
             <div class="hot_main">
               <img src="../assets/images/index/图层2@2x.png" alt="" />
             </div>
             <p>安防用品</p>
-          </div><div class="hotList">
+          </div>
+          <div class="hotList">
             <div class="hot_main">
               <img src="../assets/images/index/图层2@2x.png" alt="" />
             </div>
@@ -118,7 +120,10 @@ export default {
     Banner,
     Footer,
   },
-  data() {},
+  data() {
+    return {};
+  },
+  methods: {},
 };
 </script>
 

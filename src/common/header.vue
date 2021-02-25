@@ -13,7 +13,7 @@
       </div>
       <div class="function">
         <p>绑定手机</p>
-        <router-link to="/mine/order"><p>我的订单</p></router-link>
+        <p @click="goOrder">我的订单</p>
         <div class="phone_line">
           <p class="iconfont">&#xe66b;</p>
           <p>采购专线 400-365-0000</p>
@@ -33,6 +33,11 @@ export default {
   created() {},
   //生命周期 - 挂载完成（访问DOM元素）
   mounted() {},
+  methods: {
+    goOrder(){
+      this.$router.push('/mine')
+    }
+  },
 };
 </script>
 <style scoped>

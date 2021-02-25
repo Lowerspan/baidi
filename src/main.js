@@ -8,6 +8,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import './assets/style/container.css'
 import ViewUI from 'view-design';
+import store from './store/index' // 引入store
 import 'view-design/dist/styles/iview.css';
 Vue.config.productionTip = false
 
@@ -25,6 +26,7 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
