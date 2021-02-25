@@ -114,7 +114,7 @@ export default {
   mounted() {},
   methods: {
     changeActive(e, index) {
-      console.log(e, index);
+      // console.log(e, index);
       e.currentTarget.className = "active";
       this.childMenu = true
     },

@@ -6,7 +6,7 @@ import Search from '@/components/searchPage'
 import Gwc from '@/components/gouwuche/index'
 import Pay from '@/components/pay/index'
 import Mine from '@/components/mine/index'
-// import Order from '@/components/mine/order/index'
+import allOrder from '@/components/mine/order/all'
 Vue.use(Router)
 
 
@@ -15,10 +15,10 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'index',
-    redirect: '/home',
+    redirect: '/',
     component: Index,
     children: [{
-      path: '/home',
+      path: '/',
       name: 'homepage',
       meta: {
         title: '百帝-首页'
@@ -32,7 +32,7 @@ export default new Router({
       title: '百帝-购物车'
     },
     component: Gwc,
-    chindren: []
+    children:[]
   }, {
     path: '/search',
     name: 'search',
@@ -50,9 +50,40 @@ export default new Router({
   }, {
     path: '/mine',
     name: 'mine',
-    meta: {
-      title: '百帝-我的'
-    },
+    redirect:'mine/all',
     component: Mine,
+    children:[{
+      path:'all',
+      name:'allOrder',
+      component:allOrder,
+      meta: {
+        title: '百帝-全部订单'
+      },
+    },{
+      path:'shenpi',
+      name:'spOrder',
+      component:resolve => require(['@/components/mine/order/sp.vue'],resolve),
+      meta: {
+        title: '百帝-审批订单'
+      },
+    },{
+      path:'tuihuo',
+      name:'thOrder',
+      component:resolve => require(['@/components/mine/order/th.vue'],resolve),
+      meta: {
+        title: '百帝-退货订单'
+      },
+    },{
+      path:'yuzhi',
+      name:'yzOrder',
+      component:resolve => require(['@/components/mine/order/yz.vue'],resolve),
+      meta: {
+        title: '百帝-预置订单'
+      },
+    },{
+      path:'yuzhi/chakan',
+      name:'look',
+      component:resolve => require(['@/components/mine/order/yuzhi/lookyz'],resolve),
+    }]
   }]
 })

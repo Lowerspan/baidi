@@ -1,39 +1,6 @@
-<!--  -->
+
 <template>
   <div>
-    <div class="order_main">
-      <div class="menu_left">
-        <div class="one">
-          <p>我的订单</p>
-          <div class="two">
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-          </div>
-        </div>
-        <div class="one">
-          <p>我的账户</p>
-          <div class="two">
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-          </div>
-        </div>
-        <div class="one">
-          <p>我的报表</p>
-          <div class="two">
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-            <p>全部订单</p>
-          </div>
-        </div>
-      </div>
       <div class="menu_right">
         <div class="right_top">
           <p>全部订单查询</p>
@@ -176,20 +143,14 @@
                 </div>
               </div>
             </el-tab-pane>
-            <el-tab-pane label="审批中订单" name="second"
-              >审批中订单</el-tab-pane
-            >
-            <el-tab-pane label="未审批订单" name="third"
-              >未审批订单</el-tab-pane
-            >
-            <el-tab-pane label="审批完成订单" name="fourth"
-              >审批完成订单</el-tab-pane
-            >
+            <el-tab-pane label="审批中订单" name="second">审批中订单</el-tab-pane>
+            <el-tab-pane label="未审批订单" name="third">未审批订单</el-tab-pane>
+            <el-tab-pane label="审批完成订单" name="fourth">审批完成订单</el-tab-pane>
           </el-tabs>
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>

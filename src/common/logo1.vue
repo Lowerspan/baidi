@@ -2,13 +2,13 @@
 <template>
   <div class="container">
     <div class="logo_img" style="width: 270px; height: 41px">
-      <router-link to="home">
+      <router-link to="/">
         <img src="../assets/images/logo.jpg" alt="" style="height: 100%" />
       </router-link>
     </div>
     <div class="logo_right">
       <div class="search_input">
-        <el-input v-model="input" placeholder="请输入内容"></el-input>
+        <el-input v-model="searchKeyWord" placeholder="请输入内容"></el-input>
         <el-button
           type="primary"
           icon="el-icon-search"
@@ -39,7 +39,7 @@
 export default {
   data() {
     return {
-      input:[1,2,3],
+      searchKeyWord:[],
     };
   },
   //生命周期 - 创建完成（访问当前this实例）
