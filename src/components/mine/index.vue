@@ -15,13 +15,13 @@
               <p><router-link to="/mine/shenpi">审批订单</router-link></p>
               <p><router-link to="/mine/tuihuo">退货订单</router-link></p>
               <p><router-link to="/mine/yuzhi">预置订单</router-link></p>
-              <p><router-link to="/mine/all">快速订单</router-link></p>
+              <p><router-link to="/mine/kuaisu">快速订单</router-link></p>
             </div>
           </div>
           <div class="one">
             <p>我的账户</p>
             <div class="two">
-              <p><router-link to="/mine/all">成本中心</router-link></p>
+              <p><router-link to="/mine/cbzx">成本中心</router-link></p>
               <p><router-link to="/mine/all">账户资料</router-link></p>
               <p><router-link to="/mine/all">我的收藏</router-link></p>
               <p><router-link to="/mine/all">安全管理</router-link></p>

@@ -84,6 +84,14 @@ export default new Router({
       path:'yuzhi/chakan',
       name:'look',
       component:resolve => require(['@/components/mine/order/yuzhi/lookyz'],resolve),
+    },{
+      path:'kuaisu',
+      name:'ksOrder',
+      component:resolve => require(['@/components/mine/order/ks.vue'],resolve),
+    },{
+      path:'cbzx',
+      name:'cbCenter',
+      component:resolve => require(['@/components/mine/account/cbzx.vue'],resolve),
     }]
   }]
 })

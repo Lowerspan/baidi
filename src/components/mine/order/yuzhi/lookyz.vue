@@ -1,4 +1,3 @@
-<!--  -->
 <template>
   <div>
     <div class="menu_right">
@@ -13,7 +12,7 @@
           </el-form-item>
         </el-form>
         <p>商品信息</p>
-        <el-table :data="tableData" style="width: 100%" >
+        <el-table :data="tableData" style="width: 100%">
           <el-table-column prop="date" label="商品名称" width="350px">
             <template scope="scope">
               <div style="display: flex; align-items: center">
@@ -27,21 +26,35 @@
               </div>
             </template>
           </el-table-column>
-          <el-table-column prop="goodType" label="商品类型" align="center"> </el-table-column>
-          <el-table-column prop="goodPrice" label="单价" align="center"> </el-table-column>
-          <el-table-column prop="goodNum" label="数量" align="center">
-            <template slot-scope="scope">
-              <el-input-number
-                size="mini"
-                :min="1"
-                :value="scope.row.num"
-                v-on:input="handleBlur"
-                @change="handleChange(scope.row)"
-              ></el-input-number>
+          <el-table-column prop="goodType" label="商品类型" align="center">
+          </el-table-column>
+          <el-table-column prop="goodPrice" label="单价" align="center">
+          </el-table-column>
+          <el-table-column label="数量" align="center" width="180">
+            <template scope="scope">
+              <div>
+                <el-input
+                  v-model="scope.row.goodNum"
+                  @change="handleInput(scope.row)"
+                >
+                  <el-button slot="prepend" @click="del(scope.row)"
+                    ><i class="el-icon-minus"></i
+                  ></el-button>
+                  <el-button slot="append" @click="add(scope.row)"
+                    ><i class="el-icon-plus"></i
+                  ></el-button>
+                </el-input>
+              </div>
             </template>
           </el-table-column>
-          <el-table-column prop="allPrice" label="小计" align="center"> </el-table-column>
-          <el-table-column fixed="right" label="操作" width="100" align="center">
+          <el-table-column prop="allPrice" label="小计" align="center">
+          </el-table-column>
+          <el-table-column
+            fixed="right"
+            label="操作"
+            width="100"
+            align="center"
+          >
             <template slot-scope="scope">
               <el-button
                 @click="handleClick(scope.row)"
@@ -52,6 +65,11 @@
             </template>
           </el-table-column>
         </el-table>
+        <div class="zongji">
+          <p>共<span style="color:#5DA71E">2</span>件商品</p>
+          <p>总价（不含运费）</p>
+          <p style="color:#D44D44">￥<span style="font-size:26px">{{moneyTotal}}</span></p>
+        </div>
       </div>
     </div>
   </div>
@@ -78,17 +96,59 @@ export default {
             descript: "小米手环2",
           },
           goodType: "非协议",
-          goodPrice: "$1.99",
-          goodNum: "1",
-          allPrice: "$1.99",
+          goodPrice: 1,
+          goodNum: 1,
+          allPrice: 1,
         },
       ],
+      moneyTotal:1500,
+      multipleSelection: [],
     };
   },
   //生命周期 - 创建完成（访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（访问DOM元素）
   mounted() {},
+  methods: {
+    handleInput: function (value) {
+      if (null == value.goodNum || value.goodNum == "") {
+        value.goodNum = 1;
+      }
+      value.allPrice = (value.goodNum * value.goodPrice).toFixed(2); //保留两位小数
+      //增加商品数量也需要重新计算商品总价
+      this.selected(this.multipleSelection);
+    },
+    add: function (addGood) {
+      //输入框输入值变化时会变为字符串格式返回到js
+      //此处要用v-model，实现双向数据绑定
+      console.log(addGood);
+      if (typeof addGood.goodNum == "string") {
+        addGood.goodNum = parseInt(addGood.goodNum);
+      }
+      addGood.goodNum += 1;
+    },
+    del: function (delGood) {
+      if (typeof delGood.goodNum == "string") {
+        delGood.goodNum = parseInt(delGood.goodNum);
+      }
+      if (delGood.goodNum > 1) {
+        delGood.goodNum -= 1;
+      }
+    },
+    //返回的参数为选中行对应的对象
+    selected: function (selection) {
+      this.multipleSelection = selection;
+      this.moneyTotal = 0;
+      //此处不支持forEach循环，只能用原始方法了
+      for (var i = 0; i < selection.length; i++) {
+        //判断返回的值是否是字符串
+        if (typeof selection[i].goodTotal == "string") {
+          selection[i].goodTotal = parseInt(selection[i].goodTotal);
+        }
+        this.moneyTotal += selection[i].goodTotal;
+      }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -104,7 +164,7 @@ export default {
   height: 660px;
   background-color: #fff;
   padding: 14px 16px;
-  margin-right: 16px;
+  margin-right: 30px;
 }
 .one {
   margin-bottom: 24px;
@@ -180,8 +240,18 @@ export default {
   line-height: 36px;
   display: inline-block;
 }
->>>.el-input-number .el-input{
-  width: 80px;
+.zongji{
+  display: flex;
+  justify-content:flex-end;
+  margin-top: 20px;
+  font-size: 16px;
+  align-items: center;
+}
+.zongji p:first-of-type{
+  margin-right: 20px;
+}
+.zongji p{
+  font-weight: normal;
 }
 /* @import url(); 引入css类 */
 </style>
